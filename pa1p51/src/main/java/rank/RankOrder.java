@@ -9,7 +9,7 @@ public class RankOrder implements Comparator<Site> {//dentro del <> tienes que p
         //Double.comp... DOUBLE pq rank es double
 
         if(resultado==0){
-            resultado=site1.compareTo(site2);
+            resultado=site2.compareTo(site1);//lo ponemos al reves para q al hacer reversed no nos modifique esto
         }
         return resultado;
     }

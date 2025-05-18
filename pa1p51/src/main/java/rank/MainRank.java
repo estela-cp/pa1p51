@@ -1,6 +1,6 @@
 package rank;
 import rank.Web;
-//import rank.WebExtender;
+import rank.WebExtended;
 
 
 public class MainRank {
@@ -19,15 +19,24 @@ public class MainRank {
                 "G->E",
                 "G->H"};
 
-        Web web = new Web();
+        WebExtended web = new WebExtended();
+
+
         for (String arc: enlaces) {
             web.addLink(arc);
         }
+
+        web.switchSiteWithName("A");
+        web.switchSiteWithName("I");
+        web.switchSiteWithName("J");
+
         System.out.println(web);
         web.simulateClick(4000);
         System.out.println("Paginas ordenadas alfabeticamente");
         System.out.println(web.getSitesByName());
         System.out.println("Paginas ordenadas por rank");
         System.out.println(web.getSitesByRank());
+
+
     }
 }

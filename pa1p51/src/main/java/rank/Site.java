@@ -3,7 +3,7 @@ package rank;
 import java.util.Locale;
 import java.util.Objects;
 
-public class Site {
+public class Site implements Comparable<Site> {
     private String name;
     private double rank;
 
@@ -53,7 +53,7 @@ public class Site {
     public int compareTo(Site otherSite){
         return this.name.compareToIgnoreCase(otherSite.name);
     }
-
+    //implements Comparable<Site> en el inicio
 
 
 }

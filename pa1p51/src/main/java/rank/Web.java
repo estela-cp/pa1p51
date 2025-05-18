@@ -28,11 +28,11 @@ public class Web {
     public void addLink(String dataLink){
         //dataLink tiene la forma A->B
         if(dataLink==null || dataLink.isEmpty())
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Cadena no valida: " + dataLink);
 
         String[] cadena= dataLink.split("->");
         if(cadena.length!=2 || cadena[0].isEmpty() || cadena[1].isEmpty())
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Cadena no valida: " + dataLink);
 
         addSiteWithName(cadena[0]);
         addSiteWithName(cadena[1]);
@@ -46,7 +46,7 @@ public class Web {
             if(site.getName().equalsIgnoreCase(name))
                 return site;//devuelve la PAGINA de nombre name
         }
-        throw new NoSuchElementException("No hay ninguna pagina con ese nombre");
+        throw new NoSuchElementException("La pagina " + name + " no ha sido encontrada");
     }
 
     public Set<String> getNames(){
